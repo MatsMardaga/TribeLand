@@ -31,3 +31,7 @@ Route::get('Contact', function () {
 Route::get('Profile', function () {
     return view('Profile');
 });
+Route::get('Login', function () {
+    return view('Login');
+});
+
