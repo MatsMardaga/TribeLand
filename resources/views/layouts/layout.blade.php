@@ -32,5 +32,6 @@
 
     @yield('home')
     @yield('login')
+    @yield('profile')
 </body>
 </html>

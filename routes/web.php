@@ -34,4 +34,7 @@ Route::get('Profile', function () {
 Route::get('Login', function () {
     return view('Login');
 });
+Route::get('Profile', function () {
+    return view('Profile');
+});
 
