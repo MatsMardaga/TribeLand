@@ -10,7 +10,7 @@
                         <div class="mb-md-5 mt-md-4 pb-5">
 
                             <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
-                            <p class="text-white-50 mb-5">Please upload a </p>
+                            <p class="text-white-50 mb-5">Please enter your email and choose a password </p>
 
                             <div class="form-outline form-white mb-4">
                                 <input type="email" id="typeEmailX" class="form-control form-control-lg" />
