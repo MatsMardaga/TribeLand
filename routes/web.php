@@ -37,3 +37,7 @@ Route::get('Login', function () {
 Route::get('Register', function () {
     return view('loginAndRegister/Register');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

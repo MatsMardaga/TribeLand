@@ -22,7 +22,7 @@
                     <li class="nav-item"><a class="nav-link" href="/News">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="/Store">Store</a></li>
                     <li class="nav-item"><a class="nav-link" href="/FAQ">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/Contact">contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Contact">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="/Profile">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="/Login">Login</a></li>
                 </ul>
