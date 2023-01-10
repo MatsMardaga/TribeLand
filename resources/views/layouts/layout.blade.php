@@ -31,7 +31,10 @@
     </nav>
 
     @yield('home')
-    @yield('login')
     @yield('profile')
+    @yield('login')
+    @yield('register')
+    
+    
 </body>
 </html>
