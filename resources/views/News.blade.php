@@ -2,15 +2,25 @@
 
 @section('News')
 
-<section class="bg-black" id="about">
-    <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-            <div class="col-lg-8 text-white">
-                <h2>News</h2>
-                <p class="lead"></p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Alle posts</div>
+                <div class="card-body">
+                    <div>
+                    </div>
+                    @foreach($news as $item)
+                        <h3>{{ $item->title}}</h3>
+                        <p>{{ $item->message}}</p>
+                        <small>Posted by {{ $item->user->name}} On {{ $item->created_at->format('d/m/y \a\t H:i')}} </small>
+                        <small>Last edited at {{ $item->updated_at->format('d/m/y \a\t H:i')}}</small>
+                        <hr>
+                    @endforeach
+                </div>
+
             </div>
         </div>
     </div>
-</section>
-
+</div>
 @endsection

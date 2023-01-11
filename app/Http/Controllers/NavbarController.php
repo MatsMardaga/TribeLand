@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\News;
 
 class NavbarController extends Controller
 {
@@ -12,7 +13,8 @@ class NavbarController extends Controller
     }
     public function news()
     {   
-        return view('News');
+        $news = News::all();
+        return view('News', compact('news'));
     }
     public function store()
     {   
