@@ -80,9 +80,12 @@
             </div>
         </nav>
         @yield('home')
+        @yield('News')
+        @yield('Store')
+        @yield('FAQ')
+        @yield('Contact')
         @yield('profile')
-        @yield('login')
-        @yield('register')
+        
 
         <main class="py-4">
             @yield('content')
