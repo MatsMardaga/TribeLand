@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('Home')
+@section('HomeA')
 
 <!-- Header-->
 <header class="bg-black bg-gradient text-white">
