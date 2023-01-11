@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('News', function () {
-    return view('News');
-});
+
 Route::get('Store', function () {
     return view('Store');
 });
@@ -30,12 +28,11 @@ Route::get('Contact', function () {
 Route::get('Profile', function () {
     return view('Profile');
 });
-Route::get('login', function () {
-    return view('loginAndRegister/Login');
-});
-Route::get('Register', function () {
-    return view('loginAndRegister/Register');
-});
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('News', [App\Http\Controllers\NavbarController::class, 'news']);
+Route::get('Store', [App\Http\Controllers\NavbarController::class, 'store']);
+Route::get('FAQ', [App\Http\Controllers\NavbarController::class, 'faq']);
+Route::get('Contact', [App\Http\Controllers\NavbarController::class, 'Contact']);
+Route::get('Profile', [App\Http\Controllers\NavbarController::class, 'profile']);

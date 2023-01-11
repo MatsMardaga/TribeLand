@@ -79,12 +79,12 @@
                 </div>
             </div>
         </nav>
-        @yield('home')
+        @yield('Home')
         @yield('News')
         @yield('Store')
         @yield('FAQ')
         @yield('Contact')
-        @yield('profile')
+        @yield('Profile')
         
 
         <main class="py-4">
