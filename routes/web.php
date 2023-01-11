@@ -15,22 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-Route::get('Store', function () {
-    return view('Store');
-});
-Route::get('FAQ', function () {
-    return view('FAQ');
-});
-Route::get('Contact', function () {
-    return view('Contact');
-});
-Route::get('Profile', function () {
-    return view('Profile');
-});
-
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('News', [App\Http\Controllers\NavbarController::class, 'news']);
 Route::get('Store', [App\Http\Controllers\NavbarController::class, 'store']);
 Route::get('FAQ', [App\Http\Controllers\NavbarController::class, 'faq']);
