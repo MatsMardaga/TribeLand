@@ -20,9 +20,5 @@ class NavbarController extends Controller
     {   
         return view('FAQ');
     }
-    public function contact()
-    {   
-        return view('Contact');
-    }
-
+    
 }
