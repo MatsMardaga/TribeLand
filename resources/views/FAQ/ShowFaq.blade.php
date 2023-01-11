@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends( (Auth::check() && Auth::user()->is_admin) ? 'layouts.admin' : 'layouts.app')
 
 @section('FAQ')
 

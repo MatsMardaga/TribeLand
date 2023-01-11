@@ -16,9 +16,5 @@ class NavbarController extends Controller
     {   
         return view('Store');
     }
-    public function faq()
-    {   
-        return view('FAQ');
-    }
     
 }

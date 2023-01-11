@@ -45,6 +45,7 @@
                         <li class="nav-item"><a class="nav-link" href="/FAQ">FAQ</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Contact">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Profile">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Profile">Admin Toolkit</a></li>
                         <!-- Authentication Links -->
                         @guest
 
@@ -80,14 +81,12 @@
                 </div>
             </div>
         </nav>
-        @yield('HomeA')
-        @yield('NewsA')
-        @yield('StoreA')
-        @yield('FAQA')
-        @yield('ContactA')
-        @yield('ProfileA')
-
-
+        @yield('Home')
+        @yield('News')
+        @yield('Store')
+        @yield('FAQ')
+        @yield('Contact')
+        @yield('Profile')
         <main class="py-4">
             @yield('content')
         </main>
