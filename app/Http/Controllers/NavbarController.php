@@ -11,11 +11,7 @@ class NavbarController extends Controller
     {
         $this->middleware('auth');
     }
-    public function news()
-    {   
-        $news = News::all();
-        return view('News', compact('news'));
-    }
+
     public function store()
     {   
         return view('Store');
@@ -28,8 +24,5 @@ class NavbarController extends Controller
     {   
         return view('Contact');
     }
-    public function profile()
-    {   
-        return view('Profile');
-    }
+
 }
