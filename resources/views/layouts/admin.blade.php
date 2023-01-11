@@ -80,12 +80,12 @@
                 </div>
             </div>
         </nav>
-        @yield('Home')
-        @yield('News')
-        @yield('Store')
-        @yield('FAQ')
-        @yield('Contact')
-        @yield('Profile')
+        @yield('HomeA')
+        @yield('NewsA')
+        @yield('StoreA')
+        @yield('FAQA')
+        @yield('ContactA')
+        @yield('ProfileA')
 
 
         <main class="py-4">

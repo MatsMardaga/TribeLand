@@ -45,6 +45,7 @@
                         <li class="nav-item"><a class="nav-link" href="/FAQ">FAQ</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Contact">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Profile">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Profile">Admin Toolkit</a></li>
                         <!-- Authentication Links -->
                         @guest
 
