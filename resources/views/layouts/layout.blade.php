@@ -10,6 +10,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/Bootstrap.css" rel="stylesheet"/>
         <script src="js/Home.js"></script>
+         <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
