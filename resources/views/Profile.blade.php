@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('profile')
 <section class="h-100 gradient-custom-2 bg-red">
