@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.admin')
 
 @section('HomeA')
 
@@ -53,6 +53,5 @@
         </div>
     </div>
 </section>
-<!-- Footer-->
 
 @endsection

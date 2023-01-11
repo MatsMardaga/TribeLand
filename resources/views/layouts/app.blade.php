@@ -80,6 +80,9 @@
                 </div>
             </div>
         </nav>
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
     @yield('Home')
     @yield('News')
@@ -88,7 +91,7 @@
     @yield('Contact')
     @yield('Profile')
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-dark fixed-bottom">
         <div class="container px-4">
             <p class="m-0 text-center text-white">Copyright &copy; TribalLand 2022</p>
         </div>

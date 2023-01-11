@@ -81,18 +81,18 @@
                 </div>
             </div>
         </nav>
-        @yield('Home')
-        @yield('News')
-        @yield('Store')
-        @yield('FAQ')
-        @yield('Contact')
-        @yield('Profile')
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    @yield('Home')
+    @yield('News')
+    @yield('Store')
+    @yield('FAQ')
+    @yield('Contact')
+    @yield('Profile')
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-dark fixed-bottom">
         <div class="container px-4">
             <p class="m-0 text-center text-white">Copyright &copy; TibalLand 2022</p>
         </div>
