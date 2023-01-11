@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('News', [App\Http\Controllers\NavbarController::class, 'news']);
 Route::get('Store', [App\Http\Controllers\NavbarController::class, 'store']);
 Route::get('FAQ', [App\Http\Controllers\NavbarController::class, 'faq']);
 Route::get('Contact', [App\Http\Controllers\NavbarController::class, 'Contact']);
 Route::get('Profile', [App\Http\Controllers\NavbarController::class, 'profile']);
+Route::resource('News', NewsController::class);
