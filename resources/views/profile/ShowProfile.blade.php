@@ -14,29 +14,28 @@
                             </button>
                         </div>
                         <div class="ms-3" style="margin-top: 130px;">
-                            <h5>Mats Mardaga</h5>
-                            <p>Belgium</p>
+                            <h5>{{ Auth::user()->name }}</h5>
+                            <p>{{ Auth::user()->country }}</p>
                         </div>
                     </div>
                     <div class="p-4 text-black" style="background-color: #f8f9fa;">
                         <div class="d-flex justify-content-end text-center py-1">
                             <div>
-                                <p class="mb-1 h5">253</p>
-                                <p class="small text-muted mb-0">Creation date</p>
+                                <p class="mb-1 h5">{{ Auth::user()->created_at->format('d/m/y') }}</p>
+                                <p class="small text-muted mb-0">Date of creation</p>
                             </div>
                             <div class="px-3">
-                                <p class="mb-1 h5">1026</p>
-                                <p class="small text-muted mb-0">Birthday</p>
+                                <p class="mb-1 h5">🎊</p>
+                                <p class="small text-muted mb-0"></p>
                             </div>
                         </div>
                     </div>
                     <div class="card-body p-4 text-black">
                         <div class="mb-5">
-                            <p class="lead fw-normal mb-1">Bio</p>
+                            <p class="lead fw-normal mb-1">About me</p>
                             <div class="p-4" style="background-color: #f8f9fa;">
                                 <p class="font-italic mb-1">
-                                    Hello, my name is Mats, I am a northern Mythology enthousiast and developer of TribeLand.
-                                    Feel free to contact me for more info
+                                {{ Auth::user()->about_me }}
                                 </p>
                             </div>
                         </div>
