@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends( (Auth::check() && Auth::user()->is_admin) ? 'layouts.admin' : 'layouts.app')
 
-@section('Profile')
+@section('content')
 <section class="h-100 gradient-custom-2 bg-red">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">

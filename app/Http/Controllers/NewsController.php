@@ -18,13 +18,17 @@ class NewsController extends Controller{
 
     public function index()
     {   
-        $news = News::all();
+        $news = News::orderBy('created_at','desc')->get();
         return view('News\ShowNews', compact('news'));
     }
 
     public function create()
     {   
-        return view('News\create');
+        if (Auth::check() && Auth::user()->is_admin) {
+            return view('News\create');
+        } else {
+            return redirect()->route('index');
+        }
     }
     public function store(Request $request)
     {   
