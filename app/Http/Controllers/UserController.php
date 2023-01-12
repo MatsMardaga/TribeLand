@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class ProfileController extends Controller{
+class UserController extends Controller{
 
 
     public function __construct()
@@ -20,8 +20,12 @@ class ProfileController extends Controller{
     }
     public function edit()
     {   
-        
         return view('Profile\edit');
+    }
+    public function update()
+    {   
+        
+        return view('Home');
     }
 
 }

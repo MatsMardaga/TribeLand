@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\NewsController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use Illuminate\Support\Facades\Auth;
@@ -27,4 +27,4 @@ Route::get('Admin', [App\Http\Controllers\NavbarController::class, 'admin']);
 Route::resource('FAQ', FaqController::class);
 Route::resource('Contact', ContactController::class);
 Route::resource('News', NewsController::class);
-Route::resource('Profile', ProfileController::class);
+Route::resource('Profile', UserController::class);
