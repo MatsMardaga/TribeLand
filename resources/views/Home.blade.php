@@ -1,6 +1,6 @@
 @extends( (Auth::check() && Auth::user()->is_admin) ? 'layouts.admin' : 'layouts.app')
 
-@section('Home')
+@section('content')
 
 <!-- Header-->
 <header class="bg-black bg-gradient text-white">

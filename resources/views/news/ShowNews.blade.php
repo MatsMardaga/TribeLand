@@ -1,6 +1,6 @@
 @extends( (Auth::check() && Auth::user()->is_admin) ? 'layouts.admin' : 'layouts.app')
 
-@section('News')
+@section('content')
 
 <div class="container">
     <div class="row justify-content-center">

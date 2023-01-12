@@ -1,6 +1,6 @@
 @extends( (Auth::check() && Auth::user()->is_admin) ? 'layouts.admin' : 'layouts.app')
 
-@section('Store')
+@section('content')
 
 <section class="bg-black" id="about">
     <div class="container px-4">

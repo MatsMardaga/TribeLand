@@ -13,7 +13,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link href="css/Bootstrap.css" rel="stylesheet" />
+    <link href="{{ asset('css/Bootstrap.css') }}" rel="stylesheet"/>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -84,12 +84,6 @@
             @yield('content')
         </main>
     </div>
-    @yield('Home')
-    @yield('News')
-    @yield('Store')
-    @yield('FAQ')
-    @yield('Contact')
-    @yield('Profile')
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container px-4">

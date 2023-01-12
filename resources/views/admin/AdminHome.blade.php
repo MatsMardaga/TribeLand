@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('HomeA')
+@section('content')
 
 <!-- Header-->
 <header class="bg-black bg-gradient text-white">
@@ -24,7 +24,7 @@
     <div class="container px-4">
         <div class="row gx-4">
             <div class="col-lg-8 text-white">
-                <a href="/" class="row gx-4 justify-content-left text-decoration-none text-white">add newsitem</a>
+                <a href="{{route('News.create')}}" class="row gx-4 justify-content-left text-decoration-none text-white">add newsitem</a>
 
             </div>
         </div>

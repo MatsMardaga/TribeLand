@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('Store', [App\Http\Controllers\NavbarController::class, 'store']);
 Route::get('Admin', [App\Http\Controllers\NavbarController::class, 'admin']);
