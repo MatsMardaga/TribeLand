@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\News;
+use Illuminate\Support\Facades\Auth;
+
 
 class NavbarController extends Controller
 {
@@ -18,7 +19,12 @@ class NavbarController extends Controller
     }
     public function admin()
     {   
-        return view('admin\AdminHome');
+        if (Auth::check() && Auth::user()->is_admin) {
+            return view('admin\AdminHome');
+        } else {
+            return view('Home');
+        }
     }
     
 }
+ 
