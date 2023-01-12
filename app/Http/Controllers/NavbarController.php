@@ -16,5 +16,9 @@ class NavbarController extends Controller
     {   
         return view('Store');
     }
+    public function admin()
+    {   
+        return view('admin\AdminHome');
+    }
     
 }

@@ -5,28 +5,27 @@
 <!-- Header-->
 <header class="bg-black bg-gradient text-white">
     <div class="container px-4 text-center">
-        <h1 class="fw-bolder">Welcome to TribeLand</h1>
+        <h1 class="fw-bolder">Welcome to the AdminToolkit {{ Auth::user()->name }} </h1>
         <hr>
         <p class="lead">
-            Tribeland is a webstore that focusses on Norse and Celtic mythology but as the name implies, we sell tribal stuff in general.
+            Here you will find the tools needed to administrate the TribeLand website
             <br>
             <br>
-            What distinguishes us from other stores is that our focus is not only on making money and selling trendy tribal and mythological merchandise,
-            we also aim to educate people on those topics by providing you with information about the items you pruchase.
-            Our admins will often post exciting news about archeological finds, historical discoveries and blog posts about living in nature.
+            In your inbox you will find suggestions for FAQ questions and News items.
+            You can add update and delete newsitems and FAQ questions as well as their categories
             <br>
             <br>
-            Join our community so you can interact and suggest topic we can write about.
+            For further information e-mail me at mats.mardaga@gmail.com, O7.
         </p>
     </div>
 </header>
-<!-- About section-->
-<section class="bg-black" id="about">
+<!-- Add news item button-->
+<section class="bg-black" id="about" >
     <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
+        <div class="row gx-4">
             <div class="col-lg-8 text-white">
-                <h2>What is this site</h2>
-                <p class="lead"></p>
+                <a href="/" class="row gx-4 justify-content-left text-decoration-none text-white">add newsitem</a>
+
             </div>
         </div>
     </div>

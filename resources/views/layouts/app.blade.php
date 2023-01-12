@@ -91,9 +91,9 @@
     @yield('Contact')
     @yield('Profile')
     <!-- Footer-->
-    <footer class="py-5 bg-dark fixed-bottom">
+    <footer class="py-5 bg-dark">
         <div class="container px-4">
-            <p class="m-0 text-center text-white">Copyright &copy; TribalLand 2022</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Tribeland 2022</p>
         </div>
     </footer>
 </body>

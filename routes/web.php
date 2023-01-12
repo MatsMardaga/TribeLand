@@ -23,6 +23,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('Store', [App\Http\Controllers\NavbarController::class, 'store']);
+Route::get('Admin', [App\Http\Controllers\NavbarController::class, 'admin']);
 Route::resource('FAQ', FaqController::class);
 Route::resource('Contact', ContactController::class);
 Route::resource('News', NewsController::class);

@@ -45,7 +45,7 @@
                         <li class="nav-item"><a class="nav-link" href="/FAQ">FAQ</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Contact">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Profile">Profile</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/Profile">Admin Toolkit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Admin">Admin Toolkit</a></li>
                         <!-- Authentication Links -->
                         @guest
 
@@ -85,6 +85,7 @@
             @yield('content')
         </main>
     </div>
+    @yield('HomeA')
     @yield('Home')
     @yield('News')
     @yield('Store')
@@ -92,9 +93,9 @@
     @yield('Contact')
     @yield('Profile')
     <!-- Footer-->
-    <footer class="py-5 bg-dark fixed-bottom">
+    <footer class="py-5 bg-dark">
         <div class="container px-4">
-            <p class="m-0 text-center text-white">Copyright &copy; TibalLand 2022</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Tribeland 2022</p>
         </div>
     </footer>
 </body>
