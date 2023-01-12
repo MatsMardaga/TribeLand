@@ -19,7 +19,7 @@
         </p>
     </div>
 </header>
-<!-- Add news item button-->
+
 <section class="bg-black" id="about" >
     <div class="container px-4">
         <div class="row gx-4">
