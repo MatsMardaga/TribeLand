@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller{
 
@@ -18,14 +19,28 @@ class UserController extends Controller{
         
         return view('Profile\ShowProfile');
     }
-    public function edit()
+    public function edit($id)
     {   
         return view('Profile\edit');
     }
-    public function update()
-    {   
+    public function update(Request $request)
+    {  
+        $profile = User::findOrFail(Auth::user()->id);
+
+        $validated = $request->validate([
+            'name'   => 'min:2',
+            'country'   => 'min:4',
+            'bio'   => 'min:30',
+        ]);
         
-        return view('Home');
+        $profile->name = $validated['name'];
+        $profile->country = $validated['country'];
+        $profile->about_me = $validated['bio'];
+        $profile->save();
+
+        return redirect()->route('index');
+        
     }
+    
 
 }
