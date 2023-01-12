@@ -30,7 +30,7 @@
                             <label for="title" class="col-md-4 col-form-label text-md-end">Content</label>
 
                             <div class="col-md-6">
-                                <textarea name="content" required>{{$news->message}}</textarea>
+                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" cols="85" rows="24" required>{{$news->message}}</textarea>
                                 @error('content')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

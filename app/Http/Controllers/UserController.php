@@ -30,11 +30,13 @@ class UserController extends Controller{
         $validated = $request->validate([
             'name'   => 'min:2',
             'country'   => 'min:4',
+            'birthday'   => 'date|before:tomorrow',
             'bio'   => 'min:30',
         ]);
         
-        $profile->name = $validated['name'];
         $profile->country = $validated['country'];
+        $profile->name = $validated['name'];
+        $profile->birthday = $validated['birthday'];
         $profile->about_me = $validated['bio'];
         $profile->save();
 

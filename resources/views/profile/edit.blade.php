@@ -10,7 +10,7 @@
                     @method('PUT')
                     <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
                         <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                            <img  alt="Upload image by clicking the bar below and fill in the rest of your profile" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
+                            <img alt="Upload image by clicking the bar below and fill in the rest of your profile" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
                             <input id="image" type="file" class="img-fluid img-thumbnail mt-4 mb-2 form-control @error('image') is-invalid @enderror" value="---" style="width: 150px; z-index: 1" name="image" autofocus>
                             <button type="submit" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
                                 Save Profile
@@ -18,10 +18,21 @@
 
 
                         </div>
-                        <div class="ms-3" style="margin-top: 130px;">
-                            <input id="name" type="text" name="name" value="{{ Auth::user()->name }}" required autofocus>
+                        <div class="ms-3" style="margin-top: 80px;">
+                            <input class="@error('name') is-invalid @enderror" name="name" id="name" type="text" value="{{ Auth::user()->name }}" autofocus>
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                             <br>
-                            <input id="country" type="text" name="country" value="{{ Auth::user()->country }}" required autofocus>
+                            <br>
+                            <input class="@error('country') is-invalid @enderror" name="country" id="country" type="text" value="{{ Auth::user()->country }}" autofocus>
+                            @error('country')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="p-4 text-black" style="background-color: #f8f9fa;">
@@ -31,9 +42,9 @@
                                 <p class="small text-muted mb-0">Date of creation</p>
                             </div>
                             <div class="px-3">
-                                <input id="Birthday" type="date" class="form-control @error('birthday') is-invalid @enderror" name="birthday" value="{{ Auth::user()->birthday}}" required autofocus>
+                                <input id="birthday" type="date" class="form-control @error('birthday') is-invalid @enderror" name="birthday" value="{{ Auth::user()->birthday}}" autofocus>
 
-                                @error('title')
+                                @error('birthday')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -46,7 +57,13 @@
                         <div class="mb-5">
                             <p class="lead fw-normal mb-1">About me</p>
                             <div class="p-4" style="background-color: #f8f9fa;">
-                                <textarea class="font-italic mb-1" name="bio" id="bio" cols="85" rows="20">{{ Auth::user()->about_me }}</textarea>
+                                <textarea class="font-italic mb-1 @error('bio') is-invalid @enderror" name="bio" id="bio" cols="85" rows="20">{{ Auth::user()->about_me }}</textarea>
+
+                                @error('bio')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
                     </div>

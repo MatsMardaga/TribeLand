@@ -23,8 +23,8 @@
                                 <p class="small text-muted mb-0">Date of creation</p>
                             </div>
                             <div class="px-3">
-                                <p class="mb-1 h5">🎊</p>
-                                <p class="small text-muted mb-0"></p>
+                                <p class="mb-1 h5">{{ date("j F, Y", strtotime(Auth::user()->birthday)) }}🎊</p>
+                                <p class="small text-muted mb-0">Birthday</p>
                             </div>
                         </div>
                     </div>
