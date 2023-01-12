@@ -46,4 +46,9 @@ class NewsController extends Controller{
         return redirect()->route('index');
     }
 
+    public function edit($id)
+    {   
+        $news = News::findOrFail($id);
+        return view('News\edit', compact('news'));
+    }
 }

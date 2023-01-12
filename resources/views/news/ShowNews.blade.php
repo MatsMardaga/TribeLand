@@ -15,6 +15,9 @@
                     <p>{{ $item->message}}</p>
                     <small>Posted by {{ $item->user->name}} On {{ $item->created_at->format('d/m/y \a\t H:i')}} </small>
                     <small>Last edited at {{ $item->updated_at->format('d/m/y \a\t H:i')}}</small>
+                    @if(Auth::check() && Auth::user()->is_admin)
+                        <a href="{{route('News.edit', $item->id)}}">Edit post</a>
+                    @endif
                     <hr>
                     @endforeach
                 </div>
