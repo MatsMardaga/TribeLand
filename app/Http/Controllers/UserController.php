@@ -13,7 +13,10 @@ class UserController extends Controller{
     {
         $this->middleware('auth');
     }
-
+    public function allprofiles()
+    {   
+        return view('Profile\allprofiles');
+    }
     public function index()
     {   
         
@@ -41,7 +44,6 @@ class UserController extends Controller{
         $profile->save();
 
         return redirect()->route('index');
-        
     }
     
 

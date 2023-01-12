@@ -24,6 +24,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('in
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('Store', [App\Http\Controllers\NavbarController::class, 'store']);
 Route::get('Admin', [App\Http\Controllers\NavbarController::class, 'admin']);
+Route::get('Allprofiles', [App\Http\Controllers\UserController::class, 'allprofiles']);
 Route::resource('FAQ', FaqController::class);
 Route::resource('Contact', ContactController::class);
 Route::resource('News', NewsController::class);

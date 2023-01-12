@@ -44,8 +44,23 @@
                         <li class="nav-item"><a class="nav-link" href="/Store">Store</a></li>
                         <li class="nav-item"><a class="nav-link" href="/FAQ">FAQ</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/Profile">Profile</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Admin">Admin Toolkit</a></li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Profiles
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class= "dropdown-item" href="/Profile">Your profile</a>
+                                <a class= "dropdown-item" href="/Allprofiles">All profiles</a>
+                            
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                       
                         <!-- Authentication Links -->
                         @guest
 
