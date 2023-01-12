@@ -8,7 +8,8 @@ use Illuminate\Console\View\Components\Alert;
 use Illuminate\Support\Facades\Auth;
 
 
-class NewsController extends Controller{
+class NewsController extends Controller
+{
 
 
     public function __construct()
@@ -17,13 +18,13 @@ class NewsController extends Controller{
     }
 
     public function index()
-    {   
-        $news = News::orderBy('created_at','desc')->get();
+    {
+        $news = News::orderBy('created_at', 'desc')->get();
         return view('News\ShowNews', compact('news'));
     }
 
     public function create()
-    {   
+    {
         if (Auth::check() && Auth::user()->is_admin) {
             return view('News\create');
         } else {
@@ -31,7 +32,7 @@ class NewsController extends Controller{
         }
     }
     public function store(Request $request)
-    {   
+    {
         $validated = $request->validate([
             'title'   => 'required|min:2',
             'content' => 'required|min:30',
@@ -47,8 +48,31 @@ class NewsController extends Controller{
     }
 
     public function edit($id)
-    {   
+    {
         $news = News::findOrFail($id);
         return view('News\edit', compact('news'));
     }
+
+    public function update($id, Request $request)
+    {
+        $news = News::findOrFail($id);
+        $validated = $request->validate([
+            'title'   => 'required|min:2',
+            'content' => 'required|min:30',
+        ]);
+
+        $news->title = $validated['title'];
+        $news->message = $validated['content'];
+        $news->save();
+
+        return redirect()->route('index');
+    }
+    public function destroy($id)
+    {
+        $news = News::findOrFail($id);
+        $news->delete();
+        return redirect()->route('index');
+    }
+
 }
+ 

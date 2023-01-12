@@ -5,11 +5,17 @@
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-lg-9 col-xl-7">
-                <div class="card">
+                <form method="POST" class="card" action="{{route('Profile.update', Auth::id())}}">
+                    @csrf
+                    @method('PUT')
                     <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
                         <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
-                            <a href="{{route('Profile.edit', Auth::id())}}" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">Edit profile</a>
+                            <button type="submit" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
+                                Save Profile
+                            </button>
+
+
                         </div>
                         <div class="ms-3" style="margin-top: 130px;">
                             <h5>{{ Auth::user()->name }}</h5>
@@ -38,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

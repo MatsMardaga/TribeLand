@@ -15,8 +15,13 @@ class ProfileController extends Controller{
 
     public function index()
     {   
-        $profile = User::all();
-        return view('Profile\ShowProfile', compact('profile'));
+        
+        return view('Profile\ShowProfile');
+    }
+    public function edit()
+    {   
+        
+        return view('Profile\edit');
     }
 
 }
