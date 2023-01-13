@@ -2,15 +2,20 @@
 
 @section('content')
 
-<section class="bg-black" id="about">
-    <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-            <div class="col-lg-8 text-white">
-                <h2>FAQ</h2>
-                <p class="lead"></p>
+<header>
+    <section class="bg-black" id="about">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8 text-white">
+                    <h2>FAQ page</h2>
+                    @foreach($category as $item)
+                    <h3>{{ $item->name}}</h3>
+                    <hr>
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <header>
 
-@endsection
+        @endsection

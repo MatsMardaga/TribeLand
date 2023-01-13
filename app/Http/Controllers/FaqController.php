@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\FaqCategory;
 
 use Illuminate\Http\Request;
+
 
 class FaqController extends Controller
 {
@@ -15,6 +17,7 @@ class FaqController extends Controller
 
     public function index()
     {
-        return view('FAQ\ShowFaq');
+        $category = FaqCategory::all();
+        return view('FAQ\ShowFaq',compact('category'));
     }
 }
