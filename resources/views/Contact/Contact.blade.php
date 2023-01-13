@@ -14,7 +14,7 @@
 
         <!--Grid column-->
         <div class="col-md-9 mb-md-0 mb-5 justify-content-center container">
-            <form id="contact-form" name="contact-form" action="mail.php" method="POST" class="">
+            <form id="contact-form" name="contact-form" method="POST" action="{{ route('Contact.store') }}">
                 @csrf
 
                 <!--Grid row-->
@@ -67,17 +67,21 @@
                 </div>
                 <!--Grid row-->
 
+                <div class="text-center text-md-left">
+                    <button type="submit" class="btn btn-primary">
+                        Send
+                    </button>
+                </div>
+
             </form>
 
-            <div class="text-center text-md-left ">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-            </div>
+
             <div class="status"></div>
         </div>
     </div>
     <br>
     <div class="col-md-3 container justify-content-center">
-        <p class="text-center" >TribeLand Belgium</p>
+        <p class="text-center">TribeLand Belgium</p>
         <p class="text-center">+32 471 783 306</p>
         <p class="text-center">mats.mardaga@gmail.com</p>
 
