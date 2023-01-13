@@ -15,8 +15,8 @@
                         @foreach($news as $item)
                         <h3>{{ $item->title}}</h3>
                         <p>{{ $item->message}}</p>
-                        <small>Posted by {{ $item->user->name}} On {{ $item->created_at->format('d/m/y \a\t H:i')}} </small>
-                        <small>Last edited at {{ $item->updated_at->format('d/m/y \a\t H:i')}}</small>
+                        <small>Posted by {{ $item->user->name}} On {{ date('d-m-Y', strtotime($item->created_at)) }} At {{ date('H:i', strtotime($item->created_at)) }} </small>
+                        <small>Last edited at {{ date('d-m-Y', strtotime($item->updated_at)) }} At {{ date('H:i', strtotime($item->updated_at)) }}</small>
                         @if(Auth::check() && Auth::user()->is_admin)
                         <a href="{{route('News.edit', $item->id)}}">Edit post</a>
                         <form method="POST" action="{{route('News.destroy', $item->id)}}">
