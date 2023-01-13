@@ -51,15 +51,5 @@
     </div>
 </section>
 <!-- Contact section-->
-<section class="bg-black">
-    <div class="container px-4">
-        <div class="row gx-4 justify-content-center text-white">
-            <div class="col-lg-8">
-                <h2>Why did we create it </h2>
-                <p class="lead"></p>
-            </div>
-        </div>
-    </div>
-</section>
 
 @endsection
