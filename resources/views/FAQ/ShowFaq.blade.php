@@ -3,24 +3,24 @@
 @section('content')
 <section class="bg-white" id="about">
     <h2 class="row gx-4 justify-content-center">FAQ page</h2>
+    <hr>
     <div class="row gx-4 justify-content-center">
         <div class="col-lg-8">
             @foreach($category as $item)
-            <h1>{{ $item->name}}</h1>
+            <h1>{{ $item->name }}</h1>
+            @foreach($item->FaQCategoryQuestion as $question)
             <p>
-                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample{{$loop->iteration}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse{{$item->id}}{{$question->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    {{ $question->name }}
                 </a>
             </p>
-            @foreach($item->FaQCategoryQuestion as $question)
-            <div class="collapse" id="collapseExample{{$loop->iteration}}">
+            <div class="collapse" id="collapse{{$item->id}}{{$question->id}}">
                 <div class="card card-body">
-                    <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
+                    <p>{{ $question->content }}</p>
                 </div>
             </div>
             <h3 data-bs-toggle="collapse"></h3>
             <br>
-
             @endforeach
 
             @endforeach
