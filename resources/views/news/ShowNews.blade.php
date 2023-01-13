@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Alle posts</div>
+                    <div class="card-header">All posts</div>
                     <div class="card-body">
                         <div>
                         </div>

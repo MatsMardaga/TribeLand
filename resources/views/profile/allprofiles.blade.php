@@ -13,12 +13,11 @@
                         @foreach($profile as $user)
                         <h3>{{ $user->name}}</h3>
                         <p>{{ $user->country}}</p>
-                        @if(Auth::check() && Auth::user()->is_admin)
+                        @if(Auth::check() && Auth::user()->is_admin && !$user->is_admin)
                         <a href="{{route('Allprofiles.show', $user->id)}}">Promote to admin</a>
                         @endif
                         <hr>
                         @endforeach
-
                     </div>
 
                 </div>
