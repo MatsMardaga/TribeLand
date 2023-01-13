@@ -2,29 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
-class NavbarController extends Controller
+class AdminController extends Controller
 {
-    public function __construct()
+    public function index()
     {
-        $this->middleware('auth');
-    }
-
-    public function store()
-    {   
-        return view('Store');
-    }
-    public function admin()
-    {   
         if (Auth::check() && Auth::user()->is_admin) {
             return view('admin\AdminHome');
         } else {
             return view('Home');
         }
     }
-    
 }
- 
