@@ -13,13 +13,9 @@ class UserController extends Controller{
     {
         $this->middleware('auth');
     }
-    public function allprofiles()
-    {   
-        return view('Profile\allprofiles');
-    }
+    
     public function index()
     {   
-        
         return view('Profile\ShowProfile');
     }
     public function edit($id)

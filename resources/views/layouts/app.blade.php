@@ -52,7 +52,6 @@
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class= "dropdown-item" href="/Profile">Your profile</a>
                                 <a class= "dropdown-item" href="/Allprofiles">All profiles</a>
-
                             </div>
                         </li>
                         <!-- Authentication Links -->
