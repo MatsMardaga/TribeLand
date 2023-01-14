@@ -15,32 +15,34 @@ class FaqQuestionController extends Controller
         $this->middleware('auth', ['except' => ['index']]);
     }
 
-    public function create($id){
+    public function create(Request $id){
         return view('FAQ\createFaqQuestion',compact('id'));
     }
-    public function store(Request $request,$id){
+    public function store(Request $request){
+        
 
         $validated = $request->validate([
             'question'   => 'required|min:5',
             'answer' => 'required|min:10',
         ]);
 
+
         $qa = new FaqQuestion();
         $qa->name = $validated['question'];
         $qa->content = $validated['answer'];
-        $qa->category_id = $id;
+        $qa->category_id = $request->input('id');
         $qa->save();
 
         return redirect()->route('index');
     }
     public function edit(){
-        
+        return view('Home');
     }
     public function update(){
-        
+        return view('Home');
     }
     public function delete(){
-        
+        return view('Home');
     }
 
     

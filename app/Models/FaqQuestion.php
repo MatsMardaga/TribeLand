@@ -10,6 +10,7 @@ class FaqQuestion extends Model
     use HasFactory;
 
     protected $table = 'faq_question';
+    public $timestamps = false;
     public function user(){
         return $this->belongsTo('App\Models\User');
     }
