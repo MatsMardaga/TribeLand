@@ -11,7 +11,8 @@
             <h1>{{ $item->name }}</h1>
             @if(Auth::check() && Auth::user()->is_admin)
             <div class="">
-            <a href="/">Edit category</a>
+            <a href="{{route('FAQcategory.create')}}">Create category</a>
+            <a href="">Edit category</a>
             <form method="POST" action="{{route('News.destroy', $item->id)}}">
                 @csrf
                 @method("delete")
@@ -25,7 +26,8 @@
                     {{ $question->name }}
                 </a>
                 @if(Auth::check() && Auth::user()->is_admin)
-                <a href="/">Edit Question and content</a>
+                <a href="{{route('FAQquestion.create')}}">Create Q&A</a>
+                <a href="/">Edit Q&A</a>
             <form method="POST" action="{{route('News.destroy', $item->id)}}">
                 @csrf
                 @method("delete")
