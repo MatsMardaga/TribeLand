@@ -9,7 +9,7 @@
                 <div class="card-header">Add Q&A</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{route('FAQquestion.store')}}">
+                    <form method="POST" action="{{route('FAQquestion.store'), $id}}">
                         @csrf
 
                         <div class="row mb-3">
@@ -38,7 +38,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        <input type="hidden" name="id" id="id" value="{{$id}}" required>
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

@@ -29,6 +29,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('in
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::resource('FAQ', FaqController::class);
 Route::resource('FAQcategory', FaqCategoryController::class);
+Route::get('FAQquestion/create/{FAQquestion}',[FaqQuestionController::class, 'create'])->name('FAQ.createwithID');
 Route::resource('FAQquestion', FaqQuestionController::class);
 Route::resource('Contact', ContactController::class);
 Route::resource('News', NewsController::class);

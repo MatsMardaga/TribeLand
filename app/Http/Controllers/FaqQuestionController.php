@@ -9,18 +9,16 @@ use Illuminate\Support\Facades\Auth;
 class FaqQuestionController extends Controller
 {
 
-    protected $category_id;
+    
 
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index']]);
     }
 
-    public function create(Request $id){
+    public function create($id){
         
-
-        $this->category_id = $id;
-        return view('FAQ\createFaqQuestion');
+        return view('FAQ\createFaqQuestion', compact('id'));
     }
 
     public function store(Request $request){
@@ -35,7 +33,7 @@ class FaqQuestionController extends Controller
         $qa = new FaqQuestion();
         $qa->name = $validated['question'];
         $qa->content = $validated['answer'];
-        $qa->category_id = $this->category_id;
+        $qa->category_id = $request->id;
         $qa->save();
 
         return redirect()->route('index');

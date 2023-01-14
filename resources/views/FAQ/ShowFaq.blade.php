@@ -26,7 +26,7 @@
                     {{ $question->name }}
                 </a>
                 @if(Auth::check() && Auth::user()->is_admin)
-                <a href="{{route('FAQquestion.create', $item->id)}}">Create Q&A</a>
+                <a href="{{route('FAQ.createwithID', $item->id)}}">Create Q&A</a>
                 
                 <form method="POST" >
                 @csrf

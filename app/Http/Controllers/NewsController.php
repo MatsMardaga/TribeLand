@@ -43,7 +43,7 @@ class NewsController extends Controller
         $news->user_id = Auth::user()->id;
         $news->save();
 
-        return redirect()->route('index');
+        return redirect()->route('News.index')->with('status','aids');
     }
 
     public function edit($id)
