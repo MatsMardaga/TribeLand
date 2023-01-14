@@ -4,11 +4,6 @@
     <!-- Header-->
     <header class="bg-black bg-gradient text-white">
         <div class="container px-4 text-center">
-            @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
             <h1 class="fw-bolder">Welcome to TribeLand</h1>
             <hr>
             <p class="lead">
