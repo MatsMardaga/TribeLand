@@ -9,7 +9,7 @@
                 <div class="card-header">Add Q&A</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{route('FAQquestion.store', $id)}}">
+                    <form method="POST" action="{{route('FAQquestion.store')}}">
                         @csrf
 
                         <div class="row mb-3">
@@ -36,12 +36,6 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <input id="id" type="hidden" name="id" value="{{ $id }}" required autofocus>
                             </div>
                         </div>
 

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class FaqQuestionController extends Controller
 {
 
+    protected $category_id;
 
     public function __construct()
     {
@@ -16,8 +17,12 @@ class FaqQuestionController extends Controller
     }
 
     public function create(Request $id){
-        return view('FAQ\createFaqQuestion',compact('id'));
+        
+
+        $this->category_id = $id;
+        return view('FAQ\createFaqQuestion');
     }
+
     public function store(Request $request){
         
 
@@ -30,7 +35,7 @@ class FaqQuestionController extends Controller
         $qa = new FaqQuestion();
         $qa->name = $validated['question'];
         $qa->content = $validated['answer'];
-        $qa->category_id = $request->input('id');
+        $qa->category_id = $this->category_id;
         $qa->save();
 
         return redirect()->route('index');

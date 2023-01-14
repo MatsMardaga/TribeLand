@@ -28,7 +28,7 @@
                 @if(Auth::check() && Auth::user()->is_admin)
                 <a href="{{route('FAQquestion.create', $item->id)}}">Create Q&A</a>
                 
-            <form method="POST">
+                <form method="POST" >
                 @csrf
                 @method("delete")
                 <input type="submit" value="Delete question and content" class="btn" onclick="return confirm('Delete question and content?');">
