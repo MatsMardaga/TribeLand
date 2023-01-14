@@ -21,10 +21,10 @@ class ProfileController extends Controller
             if(!$user->is_admin) {
                 $user->is_admin = true;
                 $user->save();
-                return redirect()->route('index')->with('message', 'User promoted to admin');
+                return redirect()->route('Allprofiles.index')->with('status','user promoted to admin');
             }
             else{
-                return redirect()->route('index')->with('message', 'User is already an admin');
+                return redirect()->route('Allprofiles.index')->with('statuswarn','There was an error promoting the user to admin');
             }
         }
        

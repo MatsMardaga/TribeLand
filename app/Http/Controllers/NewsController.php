@@ -43,7 +43,7 @@ class NewsController extends Controller
         $news->user_id = Auth::user()->id;
         $news->save();
 
-        return redirect()->route('News.index')->with('status','aids');
+        return redirect()->route('News.index')->with('status','News post created');
     }
 
     public function edit($id)
@@ -64,13 +64,13 @@ class NewsController extends Controller
         $news->message = $validated['content'];
         $news->save();
 
-        return redirect()->route('index');
+        return redirect()->route('News.index')->with('status','news post edited');
     }
     public function destroy($id)
     {
         $news = News::findOrFail($id);
         $news->delete();
-        return redirect()->route('index');
+        return redirect()->route('News.index')->with('statuswarn','news post deleted');
     }
 
 }

@@ -12,6 +12,11 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                        @if (session('statuswarn'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ session('statuswarn') }}
+                            </div>
+                        @endif
                         <div class="card-header">All posts</div>
                         <div class="card-body">
                             <div>
@@ -22,7 +27,7 @@
                                 <small>Posted by {{ $item->user->name }} On
                                     {{ date('d-m-Y', strtotime($item->created_at)) }} At
                                     {{ date('H:i', strtotime($item->created_at)) }} </small>
-                                <small>Last edited at {{ date('d-m-Y', strtotime($item->updated_at)) }} At
+                                <small>Last edited at {{ date('d-m-Y at H:i', strtotime($item->updated_at)) }} At
                                     {{ date('H:i', strtotime($item->updated_at)) }}</small>
                                 @if (Auth::check() && Auth::user()->is_admin)
                                     <a href="{{ route('News.edit', $item->id) }}">Edit post</a>

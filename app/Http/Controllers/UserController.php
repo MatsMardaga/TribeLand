@@ -39,7 +39,7 @@ class UserController extends Controller{
         $profile->about_me = $validated['bio'];
         $profile->save();
 
-        return redirect()->route('index');
+        return redirect()->route('Profile.index')->with('status','Profile edited');
     }
     
 
