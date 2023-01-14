@@ -20,7 +20,7 @@
                         <div class="card-header">All users</div>
                         <div class="card-body">
                             @foreach ($profile as $user)
-                                <h3>{{ $user->name }}</h3>
+                                <a class="mb-1 h5" href="{{route('test', $user->id)}}">{{ $user->name }}</a>
                                 <p>{{ $user->country }}</p>
                                 @if (Auth::check() && Auth::user()->is_admin && !$user->is_admin)
                                     <a href="{{ route('Allprofiles.show', $user->id) }}">Promote to admin</a>

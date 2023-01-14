@@ -8,6 +8,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FaqCategoryController;
 use App\Http\Controllers\FaqQuestionController;
+use App\Http\Controllers\ShowAllProfilesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('ShowAllProfiles/index/{id}',[ShowAllProfilesController::class, 'index'])->name('test');
 Route::resource('FAQ', FaqController::class);
 Route::resource('FAQcategory', FaqCategoryController::class);
 Route::get('FAQquestion/create/{FAQquestion}',[FaqQuestionController::class, 'create'])->name('FAQ.createwithID');
