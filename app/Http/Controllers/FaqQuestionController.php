@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\FaqCategory;
-
+use App\Models\FaqQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,22 +15,23 @@ class FaqQuestionController extends Controller
         $this->middleware('auth', ['except' => ['index']]);
     }
 
-    public function create(){
-        return view('FAQ\createFaqQuestion');
+    public function create($id){
+        return view('FAQ\createFaqQuestion',compact('id'));
     }
-    public function store(Request $request){
+    public function store(Request $request,$id){
 
         $validated = $request->validate([
-            'title'   => 'required|min:5',
-            'content' => 'required|min:10',
+            'question'   => 'required|min:5',
+            'answer' => 'required|min:10',
         ]);
 
-        $qa = new FaqCategory;
-        $qa->title = $validated['title'];
-        $qa->message = $validated['content'];
+        $qa = new FaqQuestion();
+        $qa->name = $validated['question'];
+        $qa->content = $validated['answer'];
+        $qa->category_id = $id;
         $qa->save();
 
-        return redirect()->route('FAQ');
+        return redirect()->route('index');
     }
     public function edit(){
         

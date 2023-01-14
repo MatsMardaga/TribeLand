@@ -9,14 +9,14 @@
                 <div class="card-header">Add Q&A</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{route('FAQquestion.store')}}">
+                    <form method="POST" action="{{route('FAQquestion.store',$id)}}">
                         @csrf
 
                         <div class="row mb-3">
                             <label for="question" class="col-md-4 col-form-label text-md-end">Question</label>
 
                             <div class="col-md-6">
-                                <input id="question" type="text" class="form-control @error('title') is-invalid @enderror" name="question" value="{{ old('title') }}" required autofocus>
+                                <input id="question" type="text" class="form-control @error('question') is-invalid @enderror" name="question" value="{{ old('question') }}" required autofocus>
 
                                 @error('question')
                                 <span class="invalid-feedback" role="alert">
@@ -30,7 +30,7 @@
                             <label for="answer" class="col-md-4 col-form-label text-md-end">Answer</label>
 
                             <div class="col-md-6">
-                                <textarea name="answer" required>{{old('content')}}</textarea>
+                                <textarea name="answer" required>{{old('answer')}}</textarea>
                                 @error('answer')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

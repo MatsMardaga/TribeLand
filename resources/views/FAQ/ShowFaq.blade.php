@@ -26,9 +26,9 @@
                     {{ $question->name }}
                 </a>
                 @if(Auth::check() && Auth::user()->is_admin)
-                <a href="{{route('FAQquestion.create')}}">Create Q&A</a>
-                <a href="/">Edit Q&A</a>
-            <form method="POST" action="{{route('News.destroy', $item->id)}}">
+                <a href="{{route('FAQquestion.create', $item->id)}}">Create Q&A</a>
+                <a href="{{route('FAQquestion.edit')}}">Edit Q&A</a>
+            <form method="POST" action="{{route('FAQquestion.destroy', $item->id)}}">
                 @csrf
                 @method("delete")
                 <input type="submit" value="Delete question and content" class="btn" onclick="return confirm('Delete question and content?');">
