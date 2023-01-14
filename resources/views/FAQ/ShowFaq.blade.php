@@ -12,8 +12,8 @@
             @if(Auth::check() && Auth::user()->is_admin)
             <div class="">
             <a href="{{route('FAQcategory.create')}}">Create category</a>
-            <a href="">Edit category</a>
-            <form method="POST" action="{{route('News.destroy', $item->id)}}">
+            <a href="{{route('FAQcategory.edit', $item->id)}}">Edit category</a>
+            <form method="POST" action="{{route('FAQcategory.destroy', $item->id)}}">
                 @csrf
                 @method("delete")
                 <input type="submit" value="Delete category" class="btn" onclick="return confirm('Delete category?');">

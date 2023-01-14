@@ -5,55 +5,27 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Edit newsitem</div>
+                <div class="card-header">Edit category</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('News.update', $news->id) }}">
+                    <form method="POST" action="{{ route('FAQcategory.update', $cat->id) }}">
                         @csrf
                         @method('PUT')
 
                         <div class="row mb-3">
-                            <label for="title" class="col-md-4 col-form-label text-md-end">Title</label>
+                            <label for="category" class="col-md-4 col-form-label text-md-end">New category name</label>
 
                             <div class="col-md-6">
-                                <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{$news->title}}" required autofocus>
+                                <input id="category" type="text" class="form-control @error('category') is-invalid @enderror" name="category" value="{{$cat->name}}" required autofocus>
 
-                                @error('title')
+                                @error('category')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="row mb-3">
-                            <label for="title" class="col-md-4 col-form-label text-md-end">Content</label>
-
-                            <div class="col-md-6">
-                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" cols="85" rows="24" required>{{$news->message}}</textarea>
-                                @error('content')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="image" class="col-md-4 col-form-label text-md-end">Image</label>
-
-                            <div class="col-md-6">
-                                <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" autofocus>
-
-                                @error('image')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-                        
-
+        
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
