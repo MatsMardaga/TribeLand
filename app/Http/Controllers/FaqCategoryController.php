@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
+//CategoryController
+
 class FaqCategoryController extends Controller
 {
 
 
+    //__construct is a constructor function and will be called when the route is called, only when authenticated can you access the routes
+    // iff not authenticated you will be sent to login page except for index
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index']]);

@@ -12,6 +12,4 @@ class ShowAllProfilesController extends Controller
         $person = User::findOrFail($id);
         return view('Profile\singleprofile', compact('person'));
     }
-    //Laravel finds the show controller before the update controller so it wants to use this one.
-    //The route of Allprofiles.update will go in this controller's show function.
 }

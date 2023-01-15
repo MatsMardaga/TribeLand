@@ -11,7 +11,8 @@ class FaqQuestionController extends Controller
 {
 
 
-
+    //__construct is a constructor function and will be called when the route is called, only when authenticated can you access the routes
+    // iff not authenticated you will be sent to login page except for index
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index']]);
@@ -60,9 +61,10 @@ class FaqQuestionController extends Controller
         return redirect()->route('FAQ.index')->with('status', 'Question updated');
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $question = FaqQuestion::findOrFail($id);
         $question->delete();
-        return redirect()->route('FAQ.index')->with('statuswarn','Question deleted');
+        return redirect()->route('FAQ.index')->with('statuswarn', 'Question deleted');
     }
 }

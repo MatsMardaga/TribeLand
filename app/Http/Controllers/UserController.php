@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller{
 
-
+    //__construct is a constructor function and will be called when the route is called, only when authenticated can you access the routes
+    // f not authenticated you will be sent to login page.
     public function __construct()
     {
         $this->middleware('auth');

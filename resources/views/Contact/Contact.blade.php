@@ -1,3 +1,4 @@
+<!-- Check to see which layout to use, if logged in and admin admin layout is used, if the if statement fails the app layout is used -->
 @extends(Auth::check() && Auth::user()->is_admin ? 'layouts.admin' : 'layouts.app')
 @section('content')
     <!--Section: Contact v.2-->
@@ -16,7 +17,7 @@
 
             <!--Grid column-->
             <div class="col-md-9 mb-md-0 mb-5 justify-content-center container">
-
+                <!--used to show message when contact form is sent-->
                 <form id="contact-form" name="contact-form" method="POST" action="{{ route('Contact.store') }}">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">

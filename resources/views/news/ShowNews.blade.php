@@ -1,3 +1,4 @@
+<!-- Check to see which layout to use, if logged in and admin admin layout is used, if the if statement fails the app layout is used -->
 @extends(Auth::check() && Auth::user()->is_admin ? 'layouts.admin' : 'layouts.app')
 
 @section('content')
@@ -7,11 +8,13 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
+                        <!--used to show message when item is created or updated-->
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
+                        <!--used to show message when item is deleted-->
                         @if (session('statuswarn'))
                             <div class="alert alert-danger" role="alert">
                                 {{ session('statuswarn') }}

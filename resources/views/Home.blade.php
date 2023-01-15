@@ -1,3 +1,4 @@
+<!-- Check to see which layout to use, if logged in and admin admin layout is used, if the if statement fails the app layout is used -->
 @extends(Auth::check() && Auth::user()->is_admin ? 'layouts.admin' : 'layouts.app')
 
 @section('content')
@@ -20,10 +21,12 @@
                 <br>
                 <br>
                 Join our community so you can interact and suggest topic we can write about.
+                <br>
+                <a href="/about">You can click here to see the about page</a>
             </p>
         </div>
     </header>
-    <!-- About section-->
+    <!-- Who are we section-->
     <section class="bg-black" id="about">
         <div class="container px-4">
             <div class="row gx-4 justify-content-center">
