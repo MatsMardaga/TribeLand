@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\FaqCategory;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class FaqCategoryController extends Controller
@@ -15,8 +16,16 @@ class FaqCategoryController extends Controller
         $this->middleware('auth', ['except' => ['index']]);
     }
 
+
+
     public function create(){
-        return view('FAQ\createFaqCategory');
+        if (Auth::user()->is_admin) {
+            return view('FAQ\createFaqCategory');
+        }
+        else{
+            return view('Home');
+        }
+        
     }
     public function store(Request $request){
 
@@ -28,7 +37,7 @@ class FaqCategoryController extends Controller
         $cat->name = $validated['category'];
         $cat->save();
 
-        return redirect()->route('index');
+        return redirect()->route('FAQ.index')->with('status','Category created');
     }
     public function edit($id){
 
@@ -44,12 +53,12 @@ class FaqCategoryController extends Controller
         $cat->name = $validated['category'];
         $cat->save();
 
-        return redirect()->route('index');
+        return redirect()->route('FAQ.index')->with('status','Category updated');
     }
     public function destroy($id){
         $news = FaqCategory::findOrFail($id);
         $news->delete();
-        return redirect()->route('index');
+        return redirect()->route('FAQ.index')->with('statuswarn','Category deleted');
     }
 
     
