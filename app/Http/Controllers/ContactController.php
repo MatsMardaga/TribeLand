@@ -24,8 +24,10 @@ class ContactController extends Controller{
     {
         $contact = new Contact();
         $validated = $request->validate([
+            'name'   => 'required|min:5',
+            'email'   => 'required|min:5|email|string',
             'subject'   => 'required|min:5',
-            'message' => 'required|min:30',
+            'message' => 'required|min:30|max:1000',
         ]);
 
         $contact->subject = $validated['subject'];
@@ -34,7 +36,7 @@ class ContactController extends Controller{
         $contact->created_at = Carbon::now();
         $contact->save();
 
-        return redirect()->route('index');
+        return redirect()->route('Contact.index')->with('status','message sent');
     }
     
 

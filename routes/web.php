@@ -31,7 +31,7 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('ShowAllProfiles/index/{id}',[ShowAllProfilesController::class, 'index'])->name('test');
 Route::resource('FAQ', FaqController::class);
 Route::resource('FAQcategory', FaqCategoryController::class);
-Route::get('FAQquestion/create/{FAQquestion}',[FaqQuestionController::class, 'create'])->name('FAQ.createwithID');
+Route::get('FAQquestion/create/{FAQquestion}',[FaqQuestionController::class, 'create'])->name('FAQ.createwithID'); // Code provided by Sander De Pauw and used with his permission
 Route::resource('FAQquestion', FaqQuestionController::class);
 Route::resource('Contact', ContactController::class);
 Route::resource('News', NewsController::class);
