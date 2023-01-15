@@ -60,6 +60,9 @@
                     <br>
                     <br>
                     <a href="https://w3codegenerator.com/code-snippets/laravel/display-success-message-in-laravel">Site that was used to help with the displaying of sucess messages</a>
+                    <br>
+                    <br>
+                    <a href="https://github.com/MatsMardaga/TribeLand">Link to TribeLand Github</a>
                 </div>
             </div>
         </div>
