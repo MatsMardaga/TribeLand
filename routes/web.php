@@ -35,7 +35,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-Route::get('home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/Store', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index']);
 Route::get('ShowAllProfiles/index/{id}',[ShowAllProfilesController::class, 'index'])->name('test');
 
@@ -43,12 +43,14 @@ Route::get('ShowAllProfiles/index/{id}',[ShowAllProfilesController::class, 'inde
 //Routes for FAQ page
 Route::resource('FAQ', FaqController::class);
 Route::resource('FAQcategory', FaqCategoryController::class);
+Route::resource('FAQquestion', FaqQuestionController::class);
 Route::get('FAQquestion/create/{FAQquestion}',[FaqQuestionController::class, 'create'])->name('FAQ.createwithID'); // Code provided by Sander De Pauw and used with his permission
 
 
 //Routes for Forum page
 Route::resource('Forum', ForumController::class);
 Route::resource('ForumMessage', ForumMessageController::class);
+Route::resource('ForumReply', ForumReplyController::class);
 Route::get('ForumReply/create/{ForumReply}',[ForumReplyController::class, 'create'])->name('Forum.createwithID'); // Code based on previous code which was provided by Sander
 
 Route::resource('Contact', ContactController::class);

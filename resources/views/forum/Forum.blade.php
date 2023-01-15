@@ -4,6 +4,7 @@
 @section('content')
     <section class="bg-white" id="about">
         <h2 class="row gx-4 justify-content-center">Forum page</h2>
+        <a class="row gx-4 justify-content-center" href="{{ route('ForumMessage.create') }}">Post a new message</a>
         <!-- Check to see if user is logged in and is admin, if any of these conditions is false, user will not see this-->
         <hr>
         <div class="row gx-4 justify-content-center">
@@ -12,12 +13,6 @@
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
-                    </div>
-                @endif
-                <!--used to show message when item is deleted-->
-                @if (session('statuswarn'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('statuswarn') }}
                     </div>
                 @endif
                 @foreach ($forum as $item)
