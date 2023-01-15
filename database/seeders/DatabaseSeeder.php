@@ -65,5 +65,16 @@ class DatabaseSeeder extends Seeder
         \App\Models\FaqCategory::factory()->create([
                 'name' => 'News',
         ]);
+
+
+
+
+        //Question seeder
+
+        \App\Models\FaqQuestion::factory()->create([
+                'name' => 'How long will my shipping take',
+                'content' => 'it can take between 1 and 2 days, depending on how far away you are from our nearest distributer',
+                'category_id' => 6,
+        ]);
     }
 }
