@@ -50,18 +50,19 @@ class FaqQuestionController extends Controller
     {
         $question = FaqQuestion::findOrFail($id);
         $validated = $request->validate([
-            'message'   => 'required|min:5',
-            'content'   => 'required|min:5',
+            'question'   => 'required|min:5',
+            'answer'   => 'required|min:5',
         ]);
 
-        $question->name = $validated['message'];
-        $question->content = $validated['content'];
+        $question->name = $validated['question'];
+        $question->content = $validated['answer'];
         $question->save();
         return redirect()->route('FAQ.index')->with('status', 'Question updated');
     }
 
-    public function delete()
-    {
-        return view('Home');
+    public function destroy($id){
+        $question = FaqQuestion::findOrFail($id);
+        $question->delete();
+        return redirect()->route('FAQ.index')->with('statuswarn','Question deleted');
     }
 }

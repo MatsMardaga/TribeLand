@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="title" class="col-md-4 col-form-label text-md-end">Content</label>
+                            <label for="content" class="col-md-4 col-form-label text-md-end">Content</label>
 
                             <div class="col-md-6">
                                 <textarea class="form-control @error('content') is-invalid @enderror" name="content" cols="85" rows="24" required>{{$news->message}}</textarea>

@@ -3,7 +3,9 @@
 @section('content')
     <section class="bg-white" id="about">
         <h2 class="row gx-4 justify-content-center">FAQ page</h2>
+        @if (Auth::check() && Auth::user()->is_admin)
         <a class="row gx-4 justify-content-center" href="{{ route('FAQcategory.create') }}">Create new category</a>
+        @endif
         <hr>
         <div class="row gx-4 justify-content-center">
             <div class="col-lg-8">
@@ -23,6 +25,7 @@
                         <div class="">
 
                             <a href="{{ route('FAQcategory.edit', $item->id) }}">Edit category</a>
+                            <a href="{{ route('FAQ.createwithID', $item->id) }}">Create Q&A</a>
                             <form method="POST" action="{{ route('FAQcategory.destroy', $item->id) }}">
                                 @csrf
                                 @method('delete')
@@ -39,7 +42,6 @@
                                 {{ $question->name }}
                             </a>
                             @if (Auth::check() && Auth::user()->is_admin)
-                                <a href="{{ route('FAQ.createwithID', $item->id) }}">Create Q&A</a>
                                 <a href="{{ route('FAQquestion.edit', $question->id) }}">Edit Q&A</a>
                                 <form method="POST" action="{{route('FAQquestion.destroy', $question->id)}}">
                                     @csrf

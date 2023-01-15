@@ -56,8 +56,8 @@ class FaqCategoryController extends Controller
         return redirect()->route('FAQ.index')->with('status','Category updated');
     }
     public function destroy($id){
-        $news = FaqCategory::findOrFail($id);
-        $news->delete();
+        $cat = FaqCategory::findOrFail($id);
+        $cat->delete();
         return redirect()->route('FAQ.index')->with('statuswarn','Category deleted');
     }
 
