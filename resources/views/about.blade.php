@@ -66,6 +66,9 @@
                     <br>
                     <br>
                     <a href="https://github.com/MatsMardaga/TribeLand">Link to TribeLand Github</a>
+                    <br>
+                    <br>
+                    <a href="https://www.youtube.com/watch?v=FbARge88vjk">Seeding database</a>
                 </div>
             </div>
         </div>
