@@ -9,7 +9,7 @@ class ForumReply extends Model
 {
     use HasFactory;
 
-    protected $table = 'forum_category';
+    protected $table = 'forum_comment';
     public $timestamps = false;
     public function user(){
         return $this->belongsTo('App\Models\User');
