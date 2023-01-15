@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\FaqCategory;
-
+use App\Models\ForumMessage;
 use Illuminate\Http\Request;
 
 
-class FaqController extends Controller
+class ForumController extends Controller
 {
 
     //__construct is a constructor function and will be called when the route is called, only when authenticated can you access the routes
@@ -19,7 +19,7 @@ class FaqController extends Controller
 
     public function index()
     {
-        $category = FaqCategory::all();
-        return view('FAQ\ShowFaq', compact('category'));
+        $forum = ForumMessage::all();
+        return view('forum\Forum', compact('forum'));
     }
 }

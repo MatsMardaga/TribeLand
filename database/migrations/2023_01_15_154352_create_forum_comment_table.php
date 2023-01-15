@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('message', function (Blueprint $table) {
+        Schema::create('forum_comment', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('message');
+            $table->string('content');
+            $table->integer('category_id');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('message');
+        Schema::dropIfExists('forum_comment');
     }
 };
