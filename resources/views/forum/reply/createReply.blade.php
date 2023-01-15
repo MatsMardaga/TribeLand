@@ -23,6 +23,7 @@
                                 </span>
                                 @enderror
                             </div>
+                            <input type="hidden" name="id" value="{{$id}}">
                         </div>
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
