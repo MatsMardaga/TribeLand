@@ -12,7 +12,7 @@ class FaqCategoryController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index']]);
+        $this->middleware(['auth', 'admin'], ['except' => ['index']]);
     }
 
     public function create(){
