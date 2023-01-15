@@ -32,29 +32,10 @@
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8 text-white">
                     <h2>What is this site</h2>
-                    <p class="lead"></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services section-->
-    <section class="bg-black">
-        <div class="container px-4">
-            <div class="row gx-4 justify-content-center">
-                <div class="col-lg-8 text-white">
-                    <h2>Who made it</h2>
-                    <p class="lead"></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Contact section-->
-    <section class="bg-black">
-        <div class="container px-4">
-            <div class="row gx-4 justify-content-center text-white">
-                <div class="col-lg-8">
-                    <h2>Why did we create it </h2>
-                    <p class="lead"></p>
+                    <p class="lead">
+                        This site was developped for a school project called Backend web
+                        It was developped by Mats Mardaga and could in the future be used as a basis for other personal projects
+                    </p>
                 </div>
             </div>
         </div>
