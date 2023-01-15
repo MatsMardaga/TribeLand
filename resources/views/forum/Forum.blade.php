@@ -19,6 +19,7 @@
                     <h1>{{ $item->title }}</h1>
                     <small> {{ $item->content }}
                         <br>
+                        <a href="{{ route('Forum.createwithID', $item->id) }}">Reply to this message</a>
                         <br>
                         <p>
                             <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse{{ $item->id }}"
